@@ -1,7 +1,7 @@
-package yichang;
+package grammar.exception;
 //import yichang.negativeException;
 
-public class yichangTest {
+public class testException {
 	public static void main(String[] args){
 		try {
 			System.out.println("异常测试:");

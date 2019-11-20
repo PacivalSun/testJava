@@ -1,4 +1,4 @@
-package yichang;
+package grammar.exception;
 public class negativeException extends Exception {
 
 	/**
