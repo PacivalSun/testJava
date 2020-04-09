@@ -66,6 +66,10 @@ public class JDBCUtil {
 		closeSt(st);
 		closeConn(conn);
 	}
+	public static void release(Connection conn, Statement st) {
+		closeSt(st);
+		closeConn(conn);
+	}
 
 	private static void closeRs(ResultSet rs) {
 		// TODO Auto-generated method stub
