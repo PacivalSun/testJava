@@ -59,9 +59,9 @@ public class testDemo {
 			int rs = st.executeUpdate(sql);
 
 			if (rs > 0) {
-				System.out.println("插入成功!");
+				System.out.println("新增成功!");
 			} else {
-				System.out.println("插入失败!");
+				System.out.println("新增失败!");
 			}
 
 		} catch (Exception e) {

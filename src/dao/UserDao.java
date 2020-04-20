@@ -16,4 +16,13 @@ public interface UserDao {
 	 * @param password
 	 */
 	void login(String username, String password);
+	
+	/**
+	 * 新增
+	 * @param username
+	 * @param password
+	 */
+	void insert(String username, String password);
+	
+	
 }

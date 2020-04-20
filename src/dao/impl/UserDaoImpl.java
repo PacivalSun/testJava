@@ -38,18 +38,25 @@ public class UserDaoImpl implements UserDao {
 	public void login(String username, String password) {
 		Connection conn = null;
 //		Statement st = null;
+		// Statement是先拼接字符串，再一起执行
 		PreparedStatement st=null;
 		ResultSet rs = null;
 		try {
 			// TODO Auto-generated method stub
 			conn = JDBCUtil.getConn();
+			
 //			st = conn.createStatement();
 //			String sql = "select * from t_user where user_name='" + username + "' and password='" + password + "'";
 //			rs = st.executeQuery(sql);
-			String sql = "select * from t_user where user_name='" + username + "' and password='" + password + "'";
-			st = conn.prepareStatement(sql);
-			rs = st.executeQuery();
 			
+			
+			String sql = "select * from t_user where user_name=? and password=?";
+			// 预先对sql语句执行语法的校验，？部分不管后面传什么进来，都把它当作字符串
+			st = conn.prepareStatement(sql);
+			// 索引从1开始
+			st.setString(1, username);
+			st.setString(2, password);
+			rs = st.executeQuery();
 			
 
 			if (rs.next()) {
@@ -63,6 +70,12 @@ public class UserDaoImpl implements UserDao {
 			JDBCUtil.release(conn, st, rs);
 		}
 
+	}
+
+	@Override
+	public void insert(String username, String password) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

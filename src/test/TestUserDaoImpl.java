@@ -20,7 +20,7 @@ public class TestUserDaoImpl {
 	@Test
 	public void testLogin() {
 		UserDao dao = new UserDaoImpl();
-		dao.login("zhangsan", "2 'or' 1=1");//沒有用啊
+		dao.login("zhangsan", "2'or' 1=1");
 		dao.login("zhangsan", "2");
 	}
 }
